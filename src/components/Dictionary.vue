@@ -25,7 +25,7 @@ const searchResult = ref([]);
 
 const inputRegularExpression = ref('')
 const searchWordsWithRegEx = () => {
-    const url = `http://localhost:8080/search/${encodeURIComponent(inputRegularExpression.value)}?dict=${selectedDictionary.value}`;
+    const url = `http://localhost:8080/search/${selectedDictionary.value}?strRegEx=${encodeURIComponent(inputRegularExpression.value)}`;
 
     fetch(url)
         .then((response) => response.json())
